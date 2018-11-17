@@ -1,7 +1,9 @@
 <?php
 session_start();
 require_once 'menu.php';
-$user = $_SESSION['user'];
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
+}
 
 ?>
 <!DOCTYPE html>
@@ -27,7 +29,7 @@ $user = $_SESSION['user'];
 
 <!--The content of the page-->
 <div class="container">
-    <h2>Hello <?php echo $user['firstname'] . " " . $user['lastname']  ?> </h2>
+    <h2>Hello <?php if (!empty($user)){ echo $user['firstname'] . " " . $user['lastname']; } else{ echo " Guest";}    ?> </h2>
 
 </div>
 

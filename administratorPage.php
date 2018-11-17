@@ -81,7 +81,7 @@ require_once 'menu.php';
                 <th>Name</th>
                 <th>Price</th>
                 <th>Image</th>
-                <th>Extras</th>
+                <th>Edit / Delete</th>
             </tr>
             </thead>
             <tbody>

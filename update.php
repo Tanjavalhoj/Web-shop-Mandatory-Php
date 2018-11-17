@@ -1,5 +1,5 @@
 <?php
-require_once 'administrator.php';
+require_once 'dbHandler.php';
 
 $conn = connect();
 $id = $_GET['id'];
@@ -26,28 +26,28 @@ $r = mysqli_fetch_assoc($update);
                 <h2>Update a product</h2>
 
                 <div class="form-group">
-                    <label for="input1" class="col-sm-2 control-label">First Name</label>
+                    <label for="input1" class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-10">
                         <input type="text" name="proName"  class="form-control" id="input1" value="<?php echo $r['proName']; ?>"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="input1" class="col-sm-2 control-label">Last Name</label>
+                    <label for="input1" class="col-sm-2 control-label">Price</label>
                     <div class="col-sm-10">
                         <input type="text" name="proPrice"  class="form-control" id="input1" value="<?php echo $r['proPrice']; ?>"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="input1" class="col-sm-2 control-label">E-Mail</label>
+                    <label for="input1" class="col-sm-2 control-label">Image</label>
                     <div class="col-sm-10">
                         <input type="text" name="proImage"  class="form-control" id="input1" value="<?php echo $r['proImage']; ?>" />
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="input1" class="col-sm-2 control-label">Age</label>
+                    <label for="input1" class="col-sm-2 control-label">Type</label>
                     <div class="col-sm-10">
                         <select name="typeId" class="form-control">
                             <option>Select Type</option>
@@ -68,13 +68,15 @@ $r = mysqli_fetch_assoc($update);
     </html>
 
 <?php
+$id = $_GET['id'];
+
 if(isset($_POST) & !empty($_POST)){
     $name = $_POST['proName'];
     $price = $_POST['proPrice'];
     $image = $_POST['proImage'];
     $type = $_POST['typeId'];
 
-    $UpdateSql = "UPDATE products SET proName='$name', proPrice=$price ,proImage = '$image',typeId=$type WHERE proId=$id";
+    $UpdateSql = "UPDATE products SET proName='$name', proPrice=$price ,proImage = '$image',typeId=$type WHERE proId = $id";
     var_dump($UpdateSql);
     $update = mysqli_query($conn, $UpdateSql);
 
