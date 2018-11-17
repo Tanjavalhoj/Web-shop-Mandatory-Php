@@ -1,16 +1,26 @@
 <?php
-require_once('productHandler.php')
+require_once 'productHandler.php';
+require_once 'menu.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Accessories</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!--Navigation bar-->
+<div class="container">
+    <nav class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <?php echo show_menu() ?>
+        </ul>
+    </nav>
+</div>
 
 <br />
 <div class="container">

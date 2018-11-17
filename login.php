@@ -13,7 +13,7 @@ $user = $statement->fetch_assoc();
 
 if ($user) {
     $_SESSION['user'] = $user;
-    header('location: /labs/Mandatory/Mandatory_1/index.php');
+    header('location: /labs/Mandatory/Mandatory_1/user.php');
 
     die;
 } else {

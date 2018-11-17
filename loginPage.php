@@ -1,8 +1,10 @@
+<?php require_once 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Login Or Register</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,21 +13,13 @@
 </head>
 <body>
 <!--Navigation bar-->
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">The Cloud</a>
-        </div>
+<div class="container">
+    <nav class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="productHandler.php">Products</a></li>
+            <?php echo show_menu() ?>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="basket.php"><span class="glyphicon glyphicon-shopping-cart"></span> Basket</a></li>
-            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login or Sign Up</a></li>
-        </ul>
-    </div>
-</nav>
+    </nav>
+</div>
 
 <!--The content of the page-->
 <div class="container">

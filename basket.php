@@ -1,12 +1,13 @@
 <?php
-require_once('productHandler.php');
-
+require_once 'productHandler.php';
+require_once 'menu.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Basket</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -14,23 +15,19 @@ require_once('productHandler.php');
 <body>
 
 <!--Navigation bar-->
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">The Cloud</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="productHandler.php">Products</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="basket.php"><span class="glyphicon glyphicon-shopping-cart"></span> Basket</a></li>
-            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login or Sign Up</a></li>
-        </ul>
-    </div>
-</nav>
-
 <div class="container">
+    <nav class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <?php echo show_menu() ?>
+        </ul>
+    </nav>
+</div>
+
+
+<!--Everything else-->
+<div class="container">
+    <h1>This is your basket</h1>
+
     <div style="clear:both"></div>
     <br/>
     <h3>Order Details</h3>
